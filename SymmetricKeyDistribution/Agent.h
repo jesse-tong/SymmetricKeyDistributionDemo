@@ -14,7 +14,7 @@ using namespace std;
 using namespace CryptoPP;
 
 
-//A struct mimics the structure of a possible message in a key distribution scheme
+//A struct represents the structure of a possible message in a key distribution scheme
 struct Message{
 	//These two is for key and inititial vector used to encrypt/decrypt using DES 
 	//(or the key used for communication after key distribution scheme)
@@ -28,7 +28,7 @@ struct Message{
 class Sender;
 class Receiver;
 
-
+//Interface class representing each agent in the communication
 class IClient {
 public:
 
@@ -45,6 +45,7 @@ public:
 	virtual void responseWithAuthentication(Message m, int step) = 0;
 };
 
+//Sender means the one request distribution of symmetric key, or A
 class Sender : public IClient {
 public:
 	Receiver *recvClient;
@@ -52,6 +53,7 @@ public:
 	void responseWithAuthentication(Message m, int step);
 };
 
+//Receiver means the one which will distribute symmetric keys to sender, or B
 class Receiver : public IClient {
 public:
 	Sender *sendClient;
@@ -59,6 +61,7 @@ public:
 	void responseWithAuthentication(Message m, int step);
 };
 
+//Represent the actor which intercept the communication and tries to eardrop
 class MaliciousActor : virtual public Sender, virtual public Receiver {
 public:
 	RSAClass keyPair;
