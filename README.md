@@ -14,6 +14,6 @@ https://www.cryptopp.com/wiki/Modes_of_Operation \
 
 ## Tài liệu phụ:
 
-https://github.com/JetpackUnicorn/ElephantParty
+https://github.com/JetpackUnicorn/ElephantParty \
 https://www.ired.team/miscellaneous-reversing-forensics/aes-encryption-example-using-cryptopp-.lib-in-visual-studio-c++ \
 https://stackoverflow.com/questions/12306956/example-of-aes-using-crypto \
