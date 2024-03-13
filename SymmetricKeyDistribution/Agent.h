@@ -42,7 +42,7 @@ public:
 
 	IClient() { }
 	virtual void response(Message m, int step) = 0;
-	virtual void responseWithAuthentication(Message m, int step) = 0;
+	virtual void responseWithAuthentication(Message m, int step) = 0; //
 };
 
 //Sender means the one request distribution of symmetric key, or A
